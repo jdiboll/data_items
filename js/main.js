@@ -25,11 +25,12 @@ answerOne.textContent= average.toFixed(2);
 // 		}
 // });
 
-var rightPrice = items.filter(function(item){
-	var newArray = items.price > 14 && items.price < 18;
+		var rightPrice =
+		items.filter(function(item){
+		return item.price > 14 && item.price < 18;
 		 });
 
-var newArray = 	rightPrice.map(function(price) {
+		var newArray = 	rightPrice.map(function(price) {
 	  	return price.title;
 	  
 	 
@@ -43,19 +44,67 @@ answerTwo.textContent = newArray////
 
 
 
-	 var singleCode = items.filter(function(currentCode) {
-	  	return currentCode.currency_code === "GPB";
+	 var singleCode = 
+	 items.filter(function(currentCode) {
+	  	return currentCode.currency_code === "GBP";
 		 
 	  });
-	 var theOne = singleCode.map(function(item) {
-	 	return item.currency_code;
+	 var theOne = 
+	 singleCode.map(function(item) {
+	return item.title
 	 });
-		  // console.log(oneCode);
-	var answerThree = document.querySelector("gCode");
-	answerThree.textContent = theOne;
+	 
+	 var thePrice = 
+	 singleCode.map(function(item) {
+	return item.price
+	 });
+		   //console.log(singleCode);
+	var answerThree = document.querySelector(".gCode");
+	answerThree.textContent = theOne
+	var answerThree = document.querySelector(".price");
+	answerThree.textContent = thePrice
 
-// function myWood(items) {
-	// materials.indexOf(wood,[0]) {
-		// return materials.wood;
-	// };
-// };
+
+ 	
+	  var oak = 
+	  items.indexOf(function(currentItem) {
+	   return currentItem.materials === "wood";
+  		});
+
+	  var pine = 
+	  oak.map(function(item) {
+	  	return item.title;
+	  });
+	  
+
+	  var answerFour = document.querySelector(".wood")
+	  answerFour.innerHTML = pine
+
+
+
+	  var soMuchMat = 
+	  items.filter(function(item) {
+	  	return item.materials.length > 7;
+
+	  })
+
+
+
+
+
+
+
+
+
+
+	  var selfMade =
+	  items.reduce(function(memo,item) {
+	  	return memo + item;
+	  },0);
+	  	return memo.who_made === "i_did";
+	  };
+	  var newMade = selfMade.length
+
+
+	  console.log (newMade);
+

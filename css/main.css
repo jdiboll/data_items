@@ -1,6 +1,9 @@
 body {
 	margin: 0;
 }
+.body {
+	text-align: center;
+}
 .header {
 	font-size: 24px;
 	margin-left: 30px;    
