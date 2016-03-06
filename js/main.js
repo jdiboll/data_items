@@ -36,7 +36,7 @@ answerOne.textContent= average.toFixed(2);
 	 
 });
 var answerTwo = document.querySelector(".fitItems");
-answerTwo.textContent = newArray////
+answerTwo.innerHTML = newArray////
      //console.log(newArray);
 
 // var answerTwo = document.querySelector('.fitItems');
@@ -66,19 +66,19 @@ answerTwo.textContent = newArray////
 
 
  	
-	  var oak = 
-	  items.indexOf(function(currentItem) {
-	   return currentItem.materials === "wood";
+	var oak = 
+	  items.materials.indexOf(function(material) {//
+	   return material === "wood";
   		});
 
 	  var pine = 
 	  oak.map(function(item) {
 	  	return item.title;
 	  });
-	  
+	  	console.log (oak);
 
-	  var answerFour = document.querySelector(".wood")
-	  answerFour.innerHTML = pine
+	  //var answerFour = document.querySelector(".wood")
+	  //answerFour.innerHTML = pine
 
 
 
@@ -86,7 +86,7 @@ answerTwo.textContent = newArray////
 	  items.filter(function(item) {
 	  	return item.materials.length > 7;
 
-	  })
+	  });
 
 
 
@@ -97,14 +97,14 @@ answerTwo.textContent = newArray////
 
 
 
-	  var selfMade =
-	  items.reduce(function(memo,item) {
-	  	return memo + item;
-	  },0);
-	  	return memo.who_made === "i_did";
-	  };
-	  var newMade = selfMade.length
+	  //var selfMade =
+	  //items.reduce(function(memo,item) {
+	  	//return memo + item;
+	  //},0);
+	  	//return memo.who_made === "i_did";
+	  //};
+	  //var newMade = selfMade.length
 
 
-	  console.log (newMade);
+	  //console.log (newMade);
 

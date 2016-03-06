@@ -3,12 +3,59 @@ body {
 }
 .body {
 	text-align: center;
+	background-color: #eeeeee;
+	margin-right: 0;
+	font-family: 'Droid Serif', serif;
+	font-weight: lighter;
+	font-size: 13px;
 }
 .header {
-	font-size: 24px;
+	font-size: 19px;
 	margin-left: 30px;    
+}
+.banner {
+	height: 100%;
+	width: 100%;
+}
+img {
+	max-width: 100%;
+}
+
+}
+.div1 {
+	height: 130px;
+}
+.div1 h3 {
+	margin-top: 0;
+}
+.div2 {
+	height: 130px;
+}
+.div3 {
+	height: 130px;
+}
+.div4 {
+	height: 130px;
+}
+.div5 {
+	height: 130px;
+}
+.div6 {
+	height: 130px;
 }
 .answer1 {
 	height: auto;
 	width: auto;
+}
+.div6 {
+	margin-bottom: 0;
+}
+.footer {
+	height: 50px;
+	background-color: #4b494f;
+	text-align: center;
+	color: #eeeeee;
+	}
+.footer p {
+	margin-top: 0;
 }
