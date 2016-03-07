@@ -1,12 +1,37 @@
-.header p {
-	font-size: 24px;
-}
-.banner {
-	background-image: url("https://tiy-learn-content.s3.amazonaws.com/7c5e124a-banner.jpg");
-	background-size: cover;
+.div1, .div2, .div3, .div4, .div5, .div6 {
+	height: 130px;
 }
 
 .body {
 	text-align: center;
-	height: 75px;
+	background-color: #eeeeee;
+	margin: 3px;
+	font-family: 'Droid Serif', serif;
+	font-weight: lighter;
+	font-size: 13px;
+}
+.header {
+	font-size: 19px;
+	margin-left: 30px;    
+}
+header p {
+	font-size: 24px;
+}
+.banner {
+	background-image: url("https://tiy-learn-content.s3.amazonaws.com/7c5e124a-banner.jpg");
+}
+img {
+	max-width: 100%;
+}
+.div1 h3 {
+	margin-top: 0;
+}
+.footer {
+	height: 50px;
+	background-color: #4b494f;
+	text-align: center;
+	color: #eeeeee;
+	}
+.footer p {
+	margin-top: 0;
 }

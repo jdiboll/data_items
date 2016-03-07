@@ -14,16 +14,7 @@ var average;
 var answerOne = document.querySelector(".averageCost");
 answerOne.textContent= average.toFixed(2);
 
-// console.log(average);
 
-
-// function myMyArray(prices) {
-// 	var prices = items.price;
-// 	prices.filter(function(currentPrice){
-// 		if (prices > 14 && prices < 18) {
-// 			return 
-// 		}
-// });
 
 		var rightPrice =
 		items.filter(function(item){
@@ -32,9 +23,9 @@ answerOne.textContent= average.toFixed(2);
 
 		var newArray = 	rightPrice.map(function(price) {
 	  	return price.title;
-	  
-	 
-});
+	  	});
+
+
 var answerTwo = document.querySelector(".fitItems");
 answerTwo.innerHTML = newArray////
      //console.log(newArray);
@@ -66,8 +57,8 @@ answerTwo.innerHTML = newArray////
 
 
  	
-	var oak = 
-	  items.materials.indexOf(function(material) {//
+	var oak = items.materials.split(',')
+	  oak.indexOf(function(material) {//
 	   return material === "wood";
   		});
 
@@ -75,36 +66,43 @@ answerTwo.innerHTML = newArray////
 	  oak.map(function(item) {
 	  	return item.title;
 	  });
-	  	console.log (oak);
+	  	//console.log (pine);
 
-	  //var answerFour = document.querySelector(".wood")
-	  //answerFour.innerHTML = pine
+	  var answerFour = document.querySelector(".wood")
+	  answerFour.innerHTML = pine
 
 
 
 	  var soMuchMat = 
-	  items.filter(function(item) {
-	  	return item.materials.length > 7;
+	  items.materials.split(',').filter(function(item) {
+		return item.materials.length > 7;
+
+			var layout = soMuchMat.name
+			var howMany = soMuchMat.materials
+
 
 	  });
 
+	  	var answerFive = document.querySelector(".itemName");
+	  	var answerFiveCount = document.querySelector(".itemNumber");
+	  	var answerFiveItem = document.querySelector(".itemList");
+
+	  	answerFive.textContent = layout;
+	  	answerFiveCount.textContent = soMuchMat.materials;
 
 
 
+	  var whoMade = 
+	  items.who_made.reduce(function(memo, person) {
+	  	if (who_made === "i_did") {
+	  		return memo + person +1;
+			} else {
+			return 1;
+			};
+	  });
 
+	  		var makeIt = memo;
+	  	var answerSix= document.querySelector(".madeIt");
+	  	answeSix.textContent = memo;
 
-
-
-
-
-	  //var selfMade =
-	  //items.reduce(function(memo,item) {
-	  	//return memo + item;
-	  //},0);
-	  	//return memo.who_made === "i_did";
-	  //};
-	  //var newMade = selfMade.length
-
-
-	  //console.log (newMade);
 
