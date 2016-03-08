@@ -57,52 +57,68 @@ answerTwo.innerHTML = newArray////
 
 
  	
-	var oak = items.materials.split(',')
-	  oak.indexOf(function(material) {//
-	   return material === "wood";
+	//var oak = items.materials.split(',')
+	function madeOfWood(lists) {
+		return lists.indexOf("wood") >= 0;
+	}
+
+	//This above gets down to the array of materials, 
+	//something I had tried to abrr. below.
+	 var woodItems = items.filter(function(product) {//
+	   return product.materials.indexOf('wood') >=0;
   		});
-
+	 //notice the use of the bullshit name, "product"
+	 //the indexOf function is plugged in here, it doesn't need a return
 	  var pine = 
-	  oak.map(function(item) {
-	  	return item.title;
+	  woodItems.map(function(product) {
+	  	return product.title + " is made of wood ";
 	  });
-	  	//console.log (pine);
+	  	//notice again the name "product", it contined use for clarity
+	  	//and it's purpose.
 
-	  var answerFour = document.querySelector(".wood")
-	  answerFour.innerHTML = pine
+	  var answerFour = document.querySelector(".wood");
+	  answerFour.innerHTML = pine.join('<br><br>');
 
 
 
 	  var soMuchMat = 
-	  items.materials.split(',').filter(function(item) {
-		return item.materials.length > 7;
+	  items.filter(function(product) {
+		return product.materials.length > 7;
+		});
+		// same as earlier problem- filter to the desired array.
+		var data = soMuchMat.map(function(product) {
+			return {
+			name: product.title,
+			materialsCount: product.materials.length,
+			materials: product.materials
+		}
+		});
+		
+		//mapping out the info we want for our answer...
+		var displayMess = data.map(function(datum) {
+			var firstLine = datum.name + " has " + datum.materialsCount + " materials ";
+			var materialList = datum.materials.join('<br>');
+			var message = firstLine + '<br><br>' + materialList;
+			return message;
+		});
+	  	
 
-			var layout = soMuchMat.name
-			var howMany = soMuchMat.materials
+	  	var answer5 = document.querySelector('.Answer5');
+	  	answer5.innerHTML = displayMess.join('<br><br>');
 
+	  //again, focus on the steps needed to solve the problem and what tool
+	  //works for each. Must get used to thinking this way.
 
-	  });
+	  	var selfMade =
+	  	items.filter(function(product) {
+	  		return product.who_made.indexOf('i_did') >= 0;
+	  	});
+	  	var selfCount = selfMade.reduce(function(memo, person){
+	  		return memo + person.who_made.split(',').length
+	  		
+	  		},0);
+	  		console.log (selfCount);
 
-	  	var answerFive = document.querySelector(".itemName");
-	  	var answerFiveCount = document.querySelector(".itemNumber");
-	  	var answerFiveItem = document.querySelector(".itemList");
-
-	  	answerFive.textContent = layout;
-	  	answerFiveCount.textContent = soMuchMat.materials;
-
-
-
-	  var whoMade = 
-	  items.who_made.reduce(function(memo, person) {
-	  	if (who_made === "i_did") {
-	  		return memo + person +1;
-			} else {
-			return 1;
-			};
-	  });
-
-	  		var makeIt = memo;
-	  	var answerSix= document.querySelector(".madeIt");
-	  	answeSix.textContent = memo;
-
+	  	var Answer6 = document.querySelector('.madeIt');
+	  	Answer6.innerHTML = selfCount;
 
